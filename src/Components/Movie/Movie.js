@@ -8,10 +8,9 @@ class Movie extends Component{
         super();
         this.state={
             movies: [],
-
         }
-
     }
+
     componentDidMount(){
         fetch(`https://api.themoviedb.org/3/movie/?api_key=${APIKey}`)
             .then(response => response.json())
@@ -23,10 +22,16 @@ class Movie extends Component{
             })
             .catch(err => console.error(err));
     }
+
     render(){
         return(
             <React.Fragment> 
-                {this.state.movies === 0 ? <h3> Cargando...</h3> : <MovieElement Movies = {this.state.movies}/> }
+
+                <article className="moviesList"> 
+                    {this.state.movies === 0 ? <h3> Cargando...</h3> :
+                     this.state.movies.map((movie) => <MovieElement data = {movie}/>)}
+                </article>
+                 
             </React.Fragment>
         )
     }

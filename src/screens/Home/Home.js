@@ -5,7 +5,12 @@ import Movie from "../../Components/Movie/Movie";
 
 function Home(){
     return(
-        <Movie/> 
+        <React.Fragment> 
+            
+            <Movie/> 
+            <Movie/>
+        </React.Fragment>
+        
     )
 
 }

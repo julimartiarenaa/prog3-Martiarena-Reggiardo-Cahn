@@ -1,10 +1,17 @@
-import React from "react";
-import Movies from "../Element/Element"
+import React, {Component} from "react";
 
-function MovieElement(){
-    return(
-        Movies.map((movie) => <Element Data = {movie}/>)
-    )
+class Element extends Component {
+    constructor(props){
+        super()
+    }
+    render(){
+        return(
+            <div className="element">
+                {this.props.data}
+            </div>
+        )
+    }
+    
 }
 
-export default MovieElement
+export default Element;
