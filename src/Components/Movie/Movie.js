@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import MovieElement from "../MovieElement/MovieElement";
 
-let APIKey = "7bbfa155b881d065cf760bebe36c4d28"
 
 class Movie extends Component{
     constructor(){
@@ -12,7 +11,7 @@ class Movie extends Component{
     }
 
     componentDidMount(){
-        fetch(`https://api.themoviedb.org/3/movie/?api_key=${APIKey}`)
+        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=7bbfa155b881d065cf760bebe36c4d28`)
             .then(response => response.json())
             .then(data => {
                 console.log(data)
@@ -29,7 +28,7 @@ class Movie extends Component{
 
                 <article className="moviesList"> 
                     {this.state.movies === 0 ? <h3> Cargando...</h3> :
-                     this.state.movies.map((movie) => <MovieElement data = {movie}/>)}
+                     this.state.movies.map((movie, idx) => <li key={movie + idx}><MovieElement data = {movie}/></li>)}
                 </article>
                  
             </React.Fragment>
