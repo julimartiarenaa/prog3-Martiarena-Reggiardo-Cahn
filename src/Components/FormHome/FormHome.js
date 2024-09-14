@@ -19,7 +19,7 @@ class Formulario extends Component {
       return (
        <form onSubmit={(event)=>this.evitarSubmit(event)}>
          <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} />
-         <input className="button" type="image" src="../lupa-web.webp" alt="Buscar" />
+         <button type="submit" className="button"> <img src="/lupa-web.webp" alt="Buscar" /> </button>
        </form>
       );
     }
