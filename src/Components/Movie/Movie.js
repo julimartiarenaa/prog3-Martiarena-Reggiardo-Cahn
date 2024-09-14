@@ -8,6 +8,7 @@ class Movie extends Component {
         super();
         this.state = {
             movies: [],
+            loading: true
         }
     }
 
@@ -15,12 +16,15 @@ class Movie extends Component {
         fetch(`https://api.themoviedb.org/3/movie/popular?api_key=7bbfa155b881d065cf760bebe36c4d28`)
             .then(response => response.json())
             .then(data => {
-                console.log(data)
                 this.setState({
-                    movies: data.results
-                })
+                    movies: data.results,
+                    loading: false,  // Ocultar el spinner después del retardo
+                });
             })
-            .catch(err => console.error(err));
+            .catch((err) => {
+                console.error(err);
+                this.setState({ loading: false });
+            });
     }
 
     render() {
@@ -28,8 +32,11 @@ class Movie extends Component {
             <React.Fragment>
 
                 <article className="moviesList">
-                    {this.state.movies === 0 ? <h3> Cargando...</h3> :
-                        this.state.movies.map((movie, idx) => <li key={movie + idx}><MovieElement data={movie} /></li>)}
+                    {this.state.loading ?
+                        <div className="loading">
+                            <img src="/spinner.gif" alt="Cargando..." />
+                        </div> :
+                        this.state.movies.map((movie, idx) => <li key={movie.id + idx}><MovieElement data={movie} /></li>)}
                 </article>
 
             </React.Fragment>
