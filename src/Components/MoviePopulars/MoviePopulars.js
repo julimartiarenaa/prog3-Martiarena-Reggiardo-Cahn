@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import MovieElement from "../MovieElement/MovieElement";
-import "./Movie.css"
+import "./MoviePopulars.css"
 
 
-class Movie extends Component {
+class MoviePopulars extends Component {
     constructor() {
         super();
         this.state = {
@@ -13,12 +13,10 @@ class Movie extends Component {
     }
 
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=7bbfa155b881d065cf760bebe36c4d28`)
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=7bbfa155b881d065cf760bebe36c4d28`)
             .then(response => response.json())
             .then(data => {
                 const limitedMovies = data.results.slice(0, 5);
-                console.log(limitedMovies);
-
                 this.setState({
                     movies: limitedMovies,
                     loading: false,
@@ -47,4 +45,4 @@ class Movie extends Component {
     }
 }
 
-export default Movie
+export default MoviePopulars
