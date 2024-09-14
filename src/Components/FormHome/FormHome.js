@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import "./FormHome.css"
 
-class Formulario extends Component {
+class FormHome extends Component {
     constructor(props) {
       super(props);
       this.state = {valor: ''};
@@ -25,4 +25,4 @@ class Formulario extends Component {
     }
   }
 
-export default Formulario
+export default FormHome

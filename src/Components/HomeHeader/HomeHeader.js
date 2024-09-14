@@ -1,5 +1,5 @@
 import React from "react";
-import Formulario from "../FormHome/FormHome";
+import FormHome from "../FormHome/FormHome";
 import './HomeHeader.css'
 
 function Header(params) {
@@ -12,7 +12,7 @@ function Header(params) {
                 <li>Actores</li>
             </ul>
 
-            <Formulario/> 
+            <FormHome/> 
             <ul className="usuario">
                 <li> Nombre usuario <img src="" alt="" /></li>
             </ul>
