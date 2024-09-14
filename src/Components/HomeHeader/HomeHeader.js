@@ -17,7 +17,6 @@ class HomeHeader extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({
-                    movies: data.results,
                     backup: data.results
                 });
             })
@@ -27,6 +26,11 @@ class HomeHeader extends Component {
     }
 
     filtrarPelicula(dato) {
+        if (dato === '') {
+            this.setState({movies: []})
+            return;
+        }
+
         let peliculasFiltradas = this.state.backup.filter((pelicula) => pelicula.title.toLowerCase().includes(dato.toLowerCase()));
 
         this.setState({
@@ -46,7 +50,11 @@ class HomeHeader extends Component {
 
                 <FormHome filtrarPelicula={(dato) => this.filtrarPelicula(dato)}/>
 
-                <MovieBuscador movies= {this.state.movies}/>
+                {this.state.movies.length > 0 ? (
+                    <MovieBuscador movies={this.state.movies} />
+                ) : (
+                    <p>No se encontraron películas</p> 
+                )}
 
                 <ul className="usuario">
                     <li> Nombre usuario <img src="" alt="" /></li>
