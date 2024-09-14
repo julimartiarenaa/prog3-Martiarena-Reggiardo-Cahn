@@ -12,8 +12,18 @@ class FormHome extends Component {
     }
   
     controlarCambios(event) {
-      this.setState({valor: event.target.value});
-    }
+      this.setState(
+          { valor: event.target.value },
+          () => {
+              if (this.props.filtrarPelicula) {
+                  this.props.filtrarPelicula(this.state.valor);
+              } else {
+                  console.error("filtrarPelicula no está definida");
+              }
+          }
+      );
+      {console.log(this.state.valor)}
+  }
   
     render() {
       return (
