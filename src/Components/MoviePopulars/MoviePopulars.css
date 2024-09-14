@@ -1,0 +1,26 @@
+.moviesList{
+    display: flex;
+    flex-direction: column;
+   
+}
+section{
+    height: 100%;
+    display: flex;
+}
+.loading {
+    display: flex;          
+    justify-content: center; 
+    align-items: center;     
+    position: absolute;      
+    width: 100%;             
+    height: 100%;             
+  }
+    
+  .loading img {
+    width: 100px;  
+    height: 100px;
+  }
+
+  .moviesList li{
+    list-style-type: none;
+}

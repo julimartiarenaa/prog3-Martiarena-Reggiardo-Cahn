@@ -26,17 +26,24 @@ class Movie extends Component {
                 this.setState({ loading: false });
             });
     }
-    
+
     render() {
         return (
             <React.Fragment>
 
                 <article className="moviesList">
-                    {this.state.loading ?
-                        <div className="loading">
-                            <img src="/spinner.gif" alt="Cargando..." />
-                        </div> :
-                        this.state.moviesLimited.map((movie, idx) => <li key={movie.id + idx}><MovieElement data={movie} /></li>)}
+                    <h1> Peliculas Top Rated </h1>
+                    <section>
+                        {this.state.loading ?
+                            <div className="loading">
+                                <img src="/spinner.gif" alt="Cargando..." />
+                            </div> :
+                            this.state.moviesLimited.map((movie, idx) => <li key={movie.id + idx}><MovieElement data={movie} /></li>)}
+                    </section>
+
+
+                    <button className="boton"> Ver todas </button>
+
                 </article>
 
             </React.Fragment>
