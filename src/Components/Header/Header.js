@@ -10,6 +10,8 @@ function Header(params) {
                 <li>Peliculas</li>
                 <li>Actores</li>
             </ul>
+
+            
             <ul className="usuario">
                 <li> Nombre usuario <img src="" alt="" /></li>
             </ul>

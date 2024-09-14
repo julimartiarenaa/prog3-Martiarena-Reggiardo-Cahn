@@ -1,0 +1,8 @@
+.moviesList li{
+    list-style-type: none;
+}
+
+.moviesList {
+    display: flex;
+    
+}

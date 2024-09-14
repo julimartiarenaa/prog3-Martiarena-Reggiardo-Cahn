@@ -3,14 +3,12 @@ import "../../Components/Movie/Movie"
 import "./Home.css"
 import Movie from "../../Components/Movie/Movie";
 
-function Home(){
-    return(
-        <React.Fragment> 
-            
-            <Movie/> 
-            <Movie/>
+function Home() {
+    return (
+        <React.Fragment>
+            <Movie />
         </React.Fragment>
-        
+
     )
 
 }

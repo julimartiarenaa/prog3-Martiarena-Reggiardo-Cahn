@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./MovieElement.css"
 
 class Element extends Component {
     constructor(props) {
@@ -12,7 +13,7 @@ class Element extends Component {
 
         return (
             <div className="element">
-                <img src={`https://image.tmdb.org/t/p/w500${this.props.data.poster_path}`} alt="Poster" />
+                <img src={`https://image.tmdb.org/t/p/w300${this.props.data.poster_path}`} alt="Poster" />
                 <h1>{this.props.data.title}</h1>
                 <button>Ver descripción</button>
                 <button>Ir a detalle</button>
