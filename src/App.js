@@ -1,6 +1,6 @@
 import React from "react";
 import './css/styles.css'
-import { BrowserRouter, Link, Switch, Route } from "react-router-dom/cjs/react-router-dom";
+import { Link, Switch, Route } from "react-router-dom/cjs/react-router-dom";
 import Home from "./screens/Home/Home";
 import NotFound from "./screens/NotFound/NotFound";
 import Detail from "./screens/Detail/Detail";
