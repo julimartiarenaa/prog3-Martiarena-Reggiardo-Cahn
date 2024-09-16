@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import MovieElement from "../MovieElement/MovieElement";
-import FormHome from '../FormHome/FormHome'
 import "./Movie.css"
 
 class Movie extends Component {
@@ -32,10 +31,8 @@ class Movie extends Component {
     render() {
 
         return (
-            <React.Fragment>
-                
+            <React.Fragment> 
                 <article className="moviesList">
-                    <FormHome filtrarPelicula = {(dato) => this.filtrarPelicula(dato)}/>
                     <h1> Peliculas Top Rated </h1>
                     <section>
                         {this.state.loading ?
