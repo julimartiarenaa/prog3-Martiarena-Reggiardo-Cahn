@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./MovieElement.css"
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 class Element extends Component {
     constructor(props) {
@@ -39,7 +40,7 @@ class Element extends Component {
                     <p>{this.props.data.overview}</p>
                 )}
 
-                <button>Ir a detalle</button>
+                <Link to={`/detalle/${this.props.data.id}`}>Ir a detalle</Link>
                 <button>Agregar a favoritos</button>
             </div>
         );

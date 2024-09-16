@@ -11,6 +11,7 @@ function App() {
   return (
     <Switch>
       <Route path="/" exact ={true} component={Home}></Route>
+      <Route path="/detalle/:id" component={Detail}></Route>
       <Route path="/id" component={Detail}></Route>
       <Route path= "/search/:pelicula" component={Results}></Route>
       <Route path="" component={NotFound}></Route>
