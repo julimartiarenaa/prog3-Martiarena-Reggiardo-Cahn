@@ -3,11 +3,11 @@ import Header from "../../Components/Header/Header";
 import Footer from "../../Components/Footer/Footer";
 import DetailMini from "../../Components/DetailMini/DetailMini";
 
-function Detail() {
+function Detail(props) {
     return(
         <React.Fragment>
             <Header/>
-            <DetailMini/>
+            <DetailMini  id={props.match.params.id}/>
             <Footer/>
         </React.Fragment>
     )
