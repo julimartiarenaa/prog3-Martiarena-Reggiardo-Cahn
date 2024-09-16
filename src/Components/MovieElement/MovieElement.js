@@ -27,9 +27,6 @@ class Element extends Component {
 
     render() {
 
-        if (!this.props.data.poster_path) {
-            return <div>Cargando...</div>;
-        }
 
         return (
             <div className="element">

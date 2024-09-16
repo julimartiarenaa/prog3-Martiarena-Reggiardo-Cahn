@@ -1,9 +1,10 @@
 import React from "react";
 import './css/styles.css'
-import { Link, Switch, Route } from "react-router-dom/cjs/react-router-dom";
+import { Switch, Route } from "react-router-dom/cjs/react-router-dom";
 import Home from "./screens/Home/Home";
 import NotFound from "./screens/NotFound/NotFound";
 import Detail from "./screens/Detail/Detail";
+import Results from "./screens/Results/Results";
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <Switch>
       <Route path="/" exact ={true} component={Home}></Route>
       <Route path="/id" component={Detail}></Route>
-      <Route path= "/search/:pelicula"></Route>
+      <Route path= "/search/:pelicula" component={Results}></Route>
       <Route path="" component={NotFound}></Route>
     </Switch>
   );
