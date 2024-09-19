@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./DetailMini.css";
 
 class DetailMini extends Component{
     constructor(props){
@@ -36,12 +37,12 @@ class DetailMini extends Component{
                     <img src="/Spinner.gif" alt="Cargando..." />
                 </div> :
                 <article>
-                    
+                    <img src={`https://image.tmdb.org/t/p/w300${this.state.pelicula.poster_path}`} alt="Poster" />
                     <h1>{this.state.pelicula.title}</h1>
                     <p>{this.state.pelicula.vote_average}</p>
                     <p>{this.state.pelicula.release_date}</p>
                     <p>{this.state.pelicula.runtime}</p>
-                    <p>{this.state.pelicula.genre_ids}</p>
+                    <p>{this.state.pelicula.genres.name}</p>
                     <p>{this.state.pelicula.overview}</p>
 
                 </article>
