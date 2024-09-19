@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./DetailMini.css";
+import EsFav from "../EsFav/EsFav";
 
 class DetailMini extends Component{
     constructor(props){
@@ -44,6 +45,7 @@ class DetailMini extends Component{
                     <p>{this.state.pelicula.runtime}</p>
                     <p className="genero">Géneros: {this.state.pelicula.genres.map(genre => genre.name).join(', ')}</p>
                     <p className="descripcion">{this.state.pelicula.overview}</p>
+                    <EsFav/>
 
                 </article>
             }
