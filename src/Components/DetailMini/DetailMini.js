@@ -31,19 +31,19 @@ class DetailMini extends Component{
 
     render(){
         return(
-            <section>
+            <section className="detail">
             {this.state.loading ?
                 <div className="loading">
                     <img src="/Spinner.gif" alt="Cargando..." />
                 </div> :
-                <article>
+                <article className="detailArt">
                     <img src={`https://image.tmdb.org/t/p/w300${this.state.pelicula.poster_path}`} alt="Poster" />
                     <h1>{this.state.pelicula.title}</h1>
                     <p>{this.state.pelicula.vote_average}</p>
                     <p>{this.state.pelicula.release_date}</p>
                     <p>{this.state.pelicula.runtime}</p>
-                    <p>{this.state.pelicula.genres.name}</p>
-                    <p>{this.state.pelicula.overview}</p>
+                    <p className="genero">Géneros: {this.state.pelicula.genres.map(genre => genre.name).join(', ')}</p>
+                    <p className="descripcion">{this.state.pelicula.overview}</p>
 
                 </article>
             }
