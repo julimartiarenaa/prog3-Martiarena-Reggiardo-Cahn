@@ -3,13 +3,69 @@ import "./MovieElement.css"
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
 
+
 class Element extends Component {
     constructor(props) {
         super(props);
         this.state={
             description: "Ver descripción",
             estado: "oculto",
+            textoFav: 'Agregar a Favoritos',
+            esFav: false
 
+        }
+    }
+
+    componentDidMount(){
+        let storage = localStorage.getItem('fav')
+        if (storage !== null){
+            let storageParseado = JSON.parse(storage)
+            let estaEnFav = storageParseado.includes(this.props.data.id)
+            if (estaEnFav){
+                this.setState({
+                    textoFav: 'Sacar de Favoritos',
+                    esFav: true
+                })
+            }
+        }
+    }
+
+    agregarFav(id) {
+        let storage = localStorage.getItem('fav')
+        if (storage !== null) {
+            let favParseado = JSON.parse(storage)
+            favParseado.push(id)
+            let favStringificado = JSON.stringify(favParseado)
+            localStorage.setItem('fav', favStringificado)
+        }
+        else {
+            let arrayFav = [id]
+            let arrayFavStringificado = JSON.stringify(arrayFav)
+            localStorage.setItem('fav', arrayFavStringificado)
+        }
+        this.setState({
+            textoFav: 'Sacar de Favoritos',
+            esFav: true
+        })
+    }
+
+    sacarVistaFav = () => {
+        this.props.sacarVista(this.props.data.id);
+      };
+    
+
+    sacarFav(id) {
+        let storage = localStorage.getItem('fav')
+        let favParseado = JSON.parse(storage)
+        let nuevoArrayFav = favParseado.filter((elem) => elem !== id)
+        let nuevoArrayString = JSON.stringify(nuevoArrayFav)
+        localStorage.setItem('fav', nuevoArrayString)
+        this.setState({
+            textoFav: 'Agregar a Favoritos',
+            esFav: false
+        });
+        if (this.props.sacarVista) {
+            this.props.sacarVista(id);
         }
     }
 
@@ -27,9 +83,7 @@ class Element extends Component {
     }
 
 
-    render() {
-
-
+    render() { 
         return (
             <div className="element">
 
@@ -42,8 +96,8 @@ class Element extends Component {
                     
                 )}
                 <Link to={`/detalle/${this.props.data.id}`}>Ir a detalle</Link>
-                <button>Agregar a favoritos</button>
-
+                <button onClick={this.state.esFav ? () => this.sacarFav(this.props.data.id): () => this.agregarFav(this.props.data.id)}>{this.state.textoFav}</button>
+    
             </div>
         );
     }

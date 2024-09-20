@@ -9,7 +9,7 @@ function Header(params) {
             <ul className="ulHeader">
                 <Link to="/">Home</Link>
                 <li>Peliculas</li>
-                <li>Actores</li>
+                <Link to="/favoritos">Favoritos</Link>
             </ul>
 
             

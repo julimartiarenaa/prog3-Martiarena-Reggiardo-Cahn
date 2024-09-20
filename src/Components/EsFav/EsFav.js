@@ -56,21 +56,9 @@ class EsFav extends Component{
 
 
     render(){
-        const { data } = this.props; 
-        if (!data || !data.id) {
-        return <div>Data no disponible</div>;
-        }
         return (
             <div>
-                <button
-                 onClick={
-                    this.state.esFav
-                    ? () => this.sacarFav(data.id)
-                    : () => this.agregarFav(data.id)
-                 }
-                >
-                {this.state.textoFav}
-                </button>
+                <button onClick={this.state.esFav ? () => this.sacarFav(this.props.data.id): () => this.agregarFav(this.props.data.id)}>{this.state.textoFav}</button>
             </div>
         );
     }
