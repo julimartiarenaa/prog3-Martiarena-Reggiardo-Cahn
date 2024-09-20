@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./MovieElement.css"
 import { Link } from "react-router-dom/cjs/react-router-dom";
 
+
 class Element extends Component {
     constructor(props) {
         super(props);
@@ -38,10 +39,11 @@ class Element extends Component {
                 <button onClick={() => this.showDescription()}> {this.state.description} </button>
                 {this.state.estado === "visible" && (
                     <p>{this.props.data.overview}</p>
+                    
                 )}
-
                 <Link to={`/detalle/${this.props.data.id}`}>Ir a detalle</Link>
                 <button>Agregar a favoritos</button>
+
             </div>
         );
     }

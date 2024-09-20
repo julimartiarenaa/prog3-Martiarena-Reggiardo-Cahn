@@ -5,6 +5,7 @@ import Home from "./screens/Home/Home";
 import NotFound from "./screens/NotFound/NotFound";
 import Detail from "./screens/Detail/Detail";
 import Results from "./screens/Results/Results";
+import Favs from "./screens/Favs/Favs";
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path="/" exact ={true} component={Home}></Route>
       <Route path="/detalle/:id" component={Detail}></Route>
       <Route path= "/search/:pelicula" component={Results}></Route>
+      <Route path= "/favoritos" component={Favs}></Route>
       <Route path="" component={NotFound}></Route>
     </Switch>
   );

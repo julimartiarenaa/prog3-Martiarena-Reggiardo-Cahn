@@ -1,7 +1,13 @@
 import React from "react";
 
-function Favs(props){
-    
+import FavsMini from "../../Components/FavsMini/FavsMini";
+
+function Favs(){
+    return(
+        <React.Fragment>
+            <FavsMini />
+        </React.Fragment>
+    )
 }
 
 export default Favs;
