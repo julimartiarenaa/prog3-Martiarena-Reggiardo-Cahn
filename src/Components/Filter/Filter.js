@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import "./FormHome.css"
+import "./Filter.css"
 
-class FormHome extends Component {
+class Filter extends Component {
     constructor(props) {
       super(props);
       this.state = {valor: ''};
@@ -35,4 +35,4 @@ class FormHome extends Component {
     }
   }
 
-export default FormHome
+export default Filter
