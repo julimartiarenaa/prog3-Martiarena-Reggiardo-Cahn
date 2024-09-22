@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MovieElement from "../MovieElement/MovieElement";
 import "./MoviePopulars.css"
+import { Link } from "react-router-dom/cjs/react-router-dom";
 
 
 class MoviePopulars extends Component {
@@ -32,16 +33,18 @@ class MoviePopulars extends Component {
             <React.Fragment>
                 <article className="moviesList">
                     <h1> Peliculas Populares </h1>
-                    <section> 
-                      {this.state.loading ?
-                        <div className="loading">
-                            <img src="/spinner.gif" alt="Cargando..." />
-                        </div> :
-                        this.state.moviesLimited.map((movie, idx) => <li key={movie.id + idx}><MovieElement data={movie} /></li>)}  
+                    <section>
+                        {this.state.loading ?
+                            <div className="loading">
+                                <img src="/spinner.gif" alt="Cargando..." />
+                            </div> :
+                            this.state.moviesLimited.map((movie, idx) => <li key={movie.id + idx}><MovieElement data={movie} /></li>)}
                     </section>
-                    
-                        
-                    <button className="boton"> Ver todas </button>
+
+
+                    <Link to={`vertodas`}>
+                        <button type="button" className="button"> Ver todas </button>
+                    </Link>
 
                 </article>
 

@@ -6,6 +6,7 @@ import NotFound from "./screens/NotFound/NotFound";
 import Detail from "./screens/Detail/Detail";
 import Results from "./screens/Results/Results";
 import Favs from "./screens/Favs/Favs";
+import SeeAll from "./screens/SeeAll/SeeAll"
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
       <Route path="/detalle/:id" component={Detail}></Route>
       <Route path= "/search/:pelicula" component={Results}></Route>
       <Route path= "/favoritos" component={Favs}></Route>
+      <Route path= "/vertodas" component= {SeeAll}></Route>
       <Route path="" component={NotFound}></Route>
     </Switch>
   );
