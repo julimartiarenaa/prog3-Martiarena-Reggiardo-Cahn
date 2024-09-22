@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import MovieElement from "../../Components/MovieElement/MovieElement"
-
+import Filter from "../Filter/Filter";
 
 class AllMovies extends Component {
     constructor() {
         super();
         this.state = {
             movies: [],
+            backup: [],
             loading: true
         }
     }
@@ -17,18 +18,33 @@ class AllMovies extends Component {
             .then(data => {
                 this.setState({
                     movies: data.results,
+                    backup: data.results,
                     loading: false
                 })
-                console.log(data.results);
-
+                console.log(data.results);                
             })
             .catch(err => console.log(err));
+
+    }    
+
+    filtarPelicula(peli) {
+        if (peli === "") {
+            this.setState({ movies: this.state.backup });
+        } else {
+            let peliculaFiltrada = this.state.backup.filter((titulo) => 
+                titulo.title.toLowerCase().includes(peli.toLowerCase())
+            );
+            
+            this.setState({ movies: peliculaFiltrada });
+        }
     }
 
     render() {
+        console.log("Películas filtradas:", this.state.movies); 
         return (
             <React.Fragment>    
                 <article className="moviesList">
+                    <Filter filtrarPelicula = {(titulo) => this.filtarPelicula(titulo)}/>
                     <h1>Resultados de Búsqueda</h1>
                     <section className="movieSection">
                         {this.state.loading ? (
@@ -38,8 +54,8 @@ class AllMovies extends Component {
                         ) : this.state.movies.length === 0 ? (
                             <p>No hay resultados para la búsqueda</p>
                         ) : (
-                            this.state.movies.map((movie, idx) => (
-                                <li key={movie.id + idx}>
+                            this.state.movies.map((movie) => (
+                                <li key={movie.id}>
                                     <MovieElement data={movie} />
                                 </li>
                             ))
