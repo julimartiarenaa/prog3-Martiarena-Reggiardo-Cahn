@@ -4,11 +4,11 @@ import Footer from "../../Components/Footer/Footer";
 import AllMovies from "../../Components/AllMovies/AllMovies";
 
 
-function SeeAll(){
+function SeeAll(props){
     return(
         <React.Fragment> 
             <Header/>
-            <AllMovies/>
+            <AllMovies props = {props}/>
             <Footer/>
         </React.Fragment>
     )

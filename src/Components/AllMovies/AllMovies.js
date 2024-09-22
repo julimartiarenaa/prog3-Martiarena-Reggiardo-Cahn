@@ -3,17 +3,18 @@ import MovieElement from "../../Components/MovieElement/MovieElement"
 import Filter from "../Filter/Filter";
 
 class AllMovies extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             movies: [],
             backup: [],
             loading: true
         }
+        console.log(this.props);
     }
 
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=7bbfa155b881d065cf760bebe36c4d28`)
+        fetch(`https://api.themoviedb.org/3/movie/${this.props.props.match.params.categoria}?api_key=7bbfa155b881d065cf760bebe36c4d28`)
             .then(response => response.json())
             .then(data => {
                 this.setState({
@@ -21,7 +22,7 @@ class AllMovies extends Component {
                     backup: data.results,
                     loading: false
                 })
-                console.log(data.results);                
+                console.log(data);                
             })
             .catch(err => console.log(err));
 

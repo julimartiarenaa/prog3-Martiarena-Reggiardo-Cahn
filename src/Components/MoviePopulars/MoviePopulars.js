@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import MovieElement from "../MovieElement/MovieElement";
-import "./MoviePopulars.css"
 import { Link } from "react-router-dom/cjs/react-router-dom";
+import "./MoviePopulars.css"
 
 
 class MoviePopulars extends Component {
@@ -42,7 +42,7 @@ class MoviePopulars extends Component {
                     </section>
 
 
-                    <Link to={`vertodas`}>
+                    <Link to={`vertodas/top_rated`}>
                         <button type="button" className="button"> Ver todas </button>
                     </Link>
 

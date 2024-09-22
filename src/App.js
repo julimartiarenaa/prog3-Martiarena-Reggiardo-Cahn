@@ -16,7 +16,7 @@ function App() {
       <Route path="/detalle/:id" component={Detail}></Route>
       <Route path= "/search/:pelicula" component={Results}></Route>
       <Route path= "/favoritos" component={Favs}></Route>
-      <Route path= "/vertodas" component= {SeeAll}></Route>
+      <Route path= "/vertodas/:categoria" component={SeeAll}></Route>
       <Route path="" component={NotFound}></Route>
     </Switch>
   );

@@ -4,12 +4,13 @@ import "./Results.css"
 import Header from "../../Components/Header/Header";
 
 class Results extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             movies: [],
             loading: true
         }
+    console.log(this.props);
     }
 
     componentDidMount() {

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import MovieElement from "../MovieElement/MovieElement";
+import { Link } from "react-router-dom/cjs/react-router-dom";
 import "./Movie.css"
 
 class Movie extends Component {
@@ -47,6 +48,10 @@ class Movie extends Component {
                     <button className="boton"> Ver todas </button>
 
                 </article>
+
+                <Link to={`vertodas/popular`}>
+                        <button type="button" className="button"> Ver todas </button>
+                </Link>
 
             </React.Fragment>
         )
