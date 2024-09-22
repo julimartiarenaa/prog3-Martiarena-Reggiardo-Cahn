@@ -13,7 +13,7 @@ class Movie extends Component {
     }
 
     componentDidMount() {
-        fetch(`https://api.themoviedb.org/3/movie/popular?api_key=7bbfa155b881d065cf760bebe36c4d28`)
+        fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=7bbfa155b881d065cf760bebe36c4d28`)
             .then(response => response.json())
             .then(data => {
                 this.setState({
@@ -49,7 +49,7 @@ class Movie extends Component {
 
                 </article>
 
-                <Link to={`vertodas/popular`}>
+                <Link to={`vertodas/top_rated`}>
                         <button type="button" className="button"> Ver todas </button>
                 </Link>
 
