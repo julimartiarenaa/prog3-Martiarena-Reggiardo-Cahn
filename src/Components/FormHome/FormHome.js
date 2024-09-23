@@ -21,6 +21,7 @@ class FormHome extends Component {
     }
     
     render() {
+        {console.log(this.state.valor)}
         return (
             <form onSubmit={(event) => this.evitarSubmit(event)}>
                 <input type="text" onChange={(event) => this.controlarCambios(event)} value={this.state.valor}></input>

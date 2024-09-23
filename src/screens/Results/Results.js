@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import MovieElement from '../../Components/MovieElement/MovieElement'
-import "./Results.css"
 import Header from "../../Components/Header/Header";
+import "./Results.css"
 
 class Results extends Component {
     constructor(props) {
@@ -10,7 +10,6 @@ class Results extends Component {
             movies: [],
             loading: true
         }
-    console.log(this.props);
     }
 
     componentDidMount() {
@@ -22,7 +21,6 @@ class Results extends Component {
                     loading: false
                 })
                 console.log(data.results);
-
             })
             .catch(err => console.log(err));
 

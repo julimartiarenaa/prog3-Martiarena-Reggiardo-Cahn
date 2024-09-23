@@ -12,7 +12,6 @@ class AllMovies extends Component {
             loading: true,
             cantMovies: 5
         }
-        console.log(this.props);
     }
 
     componentDidMount() {
@@ -27,8 +26,21 @@ class AllMovies extends Component {
                 console.log(data);                
             })
             .catch(err => console.log(err));
-
     }    
+
+    componentDidUpdate() {
+        fetch(`https://api.themoviedb.org/3/movie/${this.props.props.match.params.categoria}?api_key=7bbfa155b881d065cf760bebe36c4d28`)
+        .then(response => response.json())
+        .then(data => {
+            this.setState({
+                movies: data.results.slice(0, this.state.cantMovies),
+                backup: data.results,
+                loading: false
+            })
+            console.log(data);                
+        })
+        .catch(err => console.log(err));
+    }
 
     filtarPelicula(peli) {
         if (peli === "") {
