@@ -86,7 +86,7 @@ class Element extends Component {
     render() { 
         return (
             <div className="element">
-
+                    
                 <img src={`https://image.tmdb.org/t/p/w300${this.props.data.poster_path}`} alt="Poster" />
                 <h1>{this.props.data.title}</h1>
 
@@ -95,7 +95,7 @@ class Element extends Component {
                     <p>{this.props.data.overview}</p>
                     
                 )}
-                <Link to={`/detalle/${this.props.data.id}`}>Ir a detalle</Link>
+                <Link to={`/detalle/${this.props.data.id}`} className="link">Ir a detalle</Link>
                 <button onClick={this.state.esFav ? () => this.sacarFav(this.props.data.id): () => this.agregarFav(this.props.data.id)}>{this.state.textoFav}</button>
     
             </div>

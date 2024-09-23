@@ -4,26 +4,26 @@
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0 20px;
+    background-color: #a2fad8;
+    color:#509178
 }
 
 .ulHeader {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+    justify-content: space-evenly;
 }
 
 .ulHeader li {
     margin: 0 10px;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
+    display: flex;  
 }
 
 .usuario li {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
+}
+
+.link{
+    color: inherit;
+    text-decoration: none; 
 }

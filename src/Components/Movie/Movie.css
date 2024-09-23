@@ -26,3 +26,8 @@ section{
     height: 100%;
     display: flex;
 }
+
+.link{
+    color: inherit; 
+    text-decoration: none; 
+}

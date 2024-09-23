@@ -19,6 +19,7 @@ class MoviePopulars extends Component {
             .then(data => {
                 this.setState({
                     moviesLimited: data.results.slice(0, 5),
+                    
                     loading: false,
                 });
             })
@@ -31,9 +32,9 @@ class MoviePopulars extends Component {
     render() {
         return (
             <React.Fragment>
-                <article className="moviesList">
-                    <h1> Peliculas Populares </h1>
-                    <section>
+                <article className="list">
+                    <h1> Populares </h1>
+                    <section className="moviesList">
                         {this.state.loading ?
                             <div className="loading">
                                 <img src="/spinner.gif" alt="Cargando..." />
@@ -42,7 +43,7 @@ class MoviePopulars extends Component {
                     </section>
 
 
-                    <Link to={`vertodas/popular`}>
+                    <Link to= {`vertodas/popular`} className="link">
                         <button type="button" className="button"> Ver todas </button>
                     </Link>
 

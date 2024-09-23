@@ -7,14 +7,15 @@ function Header(params) {
         <header className="header">
             
             <ul className="ulHeader">
-                <Link to="/">Home</Link>
-                <Link to = '/vertodas'>Peliculas</Link>
-                <Link to="/favoritos">Favoritos</Link>
+                <Link to="/" className="link"> Home </Link>
+                <Link to="/favoritos" className="link"> Favoritos </Link>
+                <Link to = '/vertodas/top_rated' className="link"> Top Rated </Link>
+                <Link to = '/vertodas/popular' className="link"> Populares </Link>
             </ul>
 
             
             <ul className="usuario">
-                <li> Nombre usuario <img src="" alt="" /></li>
+                <li> Usuario <img src="" alt="" /></li>
             </ul>
         </header>
     )

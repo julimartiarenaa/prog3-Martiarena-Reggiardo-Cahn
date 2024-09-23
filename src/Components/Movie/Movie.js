@@ -32,9 +32,9 @@ class Movie extends Component {
     render() {
 
         return (
-            <React.Fragment> 
+            <React.Fragment>
                 <article className="moviesList">
-                    <h1> Peliculas Top Rated </h1>
+                    <h1> Mejores valoradas </h1>
                     <section>
                         {this.state.loading ?
                             <div className="loading">
@@ -44,15 +44,12 @@ class Movie extends Component {
                         }
                     </section>
 
+                    <Link to={`vertodas/top_rated`} className="link">
+                        <button type="button" className="button"> Ver todas </button>
+                    </Link>
 
-                    <button className="boton"> Ver todas </button>
 
                 </article>
-
-                <Link to={`vertodas/top_rated`}>
-                        <button type="button" className="button"> Ver todas </button>
-                </Link>
-
             </React.Fragment>
         )
     }

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import MovieElement from "../../Components/MovieElement/MovieElement"
 import Filter from "../Filter/Filter";
+import "./AllMovies.css"
 
 class AllMovies extends Component {
     constructor(props) {
@@ -8,7 +9,8 @@ class AllMovies extends Component {
         this.state = {
             movies: [],
             backup: [],
-            loading: true
+            loading: true,
+            cantMovies: 5
         }
         console.log(this.props);
     }
@@ -18,7 +20,7 @@ class AllMovies extends Component {
             .then(response => response.json())
             .then(data => {
                 this.setState({
-                    movies: data.results,
+                    movies: data.results.slice(0, this.state.cantMovies),
                     backup: data.results,
                     loading: false
                 })
@@ -40,13 +42,21 @@ class AllMovies extends Component {
         }
     }
 
+    cargasMas(){
+        if (this.movies.length === this.cantMovies){
+            this.setState({})
+        }
+    }
+
     render() {
-        console.log("Películas filtradas:", this.state.movies); 
         return (
             <React.Fragment>    
                 <article className="moviesList">
+
                     <Filter filtrarPelicula = {(titulo) => this.filtarPelicula(titulo)}/>
-                    <h1>Resultados de Búsqueda</h1>
+
+                    <h1 className="title"> Todas las peliculas </h1>
+
                     <section className="movieSection">
                         {this.state.loading ? (
                             <div className="loading">
@@ -62,6 +72,8 @@ class AllMovies extends Component {
                             ))
                         )}
                     </section>
+
+                    <button onClick={() => this.cargasMas()}> Cargar más </button>
                 </article>
             </React.Fragment>
         )
