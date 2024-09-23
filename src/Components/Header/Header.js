@@ -6,6 +6,8 @@ function Header(params) {
     return (
         <header className="header">
             
+            <img src="/saj-movies.png" alt="logo" />
+
             <ul className="ulHeader">
                 <Link to="/" className="link"> Home </Link>
                 <Link to="/favoritos" className="link"> Favoritos </Link>

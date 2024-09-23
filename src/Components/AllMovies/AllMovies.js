@@ -32,6 +32,8 @@ class AllMovies extends Component {
         fetch(`https://api.themoviedb.org/3/movie/${this.props.props.match.params.categoria}?api_key=7bbfa155b881d065cf760bebe36c4d28`)
         .then(response => response.json())
         .then(data => {
+            console.log(data);
+            
             this.setState({
                 movies: data.results.slice(0, this.state.cantMovies),
                 backup: data.results,
