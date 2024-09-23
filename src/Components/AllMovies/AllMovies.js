@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import MovieElement from "../../Components/MovieElement/MovieElement"
+import MovieElement from "../MovieElement/MovieElement"
 import Filter from "../Filter/Filter";
 import "./AllMovies.css"
 

@@ -95,7 +95,11 @@ class Element extends Component {
                     <p>{this.props.data.overview}</p>
                     
                 )}
-                <Link to={`/detalle/${this.props.data.id}`} className="link">Ir a detalle</Link>
+
+                <Link to={`/detalle/${this.props.data.id}`}>
+                    <button type="button" className="buttonMovie"> Ir a detalle </button>
+                </Link>
+
                 <button onClick={this.state.esFav ? () => this.sacarFav(this.props.data.id): () => this.agregarFav(this.props.data.id)}>{this.state.textoFav}</button>
     
             </div>
