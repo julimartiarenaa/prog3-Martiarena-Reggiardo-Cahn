@@ -2,6 +2,7 @@
     margin: 10px;
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly ;
 }
 button{
     margin: 5px;

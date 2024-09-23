@@ -1,11 +1,13 @@
-.list{
+.moviesList{
   display: flex;
-  flex-direction: column;  
+  flex-direction: column;
 }
+
 section{
   height: 100%;
-  background-color: #effcf7;
+  display: flex;
 }
+
 .loading {
   display: flex;          
   justify-content: center; 
@@ -14,22 +16,13 @@ section{
   width: 100%;             
   height: 100%;             
 }
-    
+
 .loading img {
   width: 100px;  
   height: 100px;
 }
 
+
 .moviesList li{
   list-style-type: none;
-  display: flex;
-    
-}
-.moviesList{
-  display: flex;
-  flex-direction: row;
-}
-.link{
-  color: inherit;
-  text-decoration: none; 
 }

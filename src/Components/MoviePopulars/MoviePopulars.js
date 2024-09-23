@@ -32,9 +32,9 @@ class MoviePopulars extends Component {
     render() {
         return (
             <React.Fragment>
-                <article className="list">
+                <article className="moviesList">
                     <h1> Populares </h1>
-                    <section className="moviesList">
+                    <section>
                         {this.state.loading ?
                             <div className="loading">
                                 <img src="/spinner.gif" alt="Cargando..." />
@@ -43,7 +43,7 @@ class MoviePopulars extends Component {
                     </section>
 
 
-                    <Link to= {`vertodas/popular`} className="link">
+                    <Link to= {`vertodas/popular`}>
                         <button type="button" className="button"> Ver todas </button>
                     </Link>
 
