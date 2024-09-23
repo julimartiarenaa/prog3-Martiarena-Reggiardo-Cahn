@@ -1,7 +1,7 @@
 import React, {Component} from "react";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
-import MovieElement from '../../components/MovieElement/MovieElement'
+import Header from "../../Components/Header/Header";
+import Footer from "../../Components/Footer/Footer";
+import MovieElement from '../../Components/MovieElement/MovieElement'
 
 
 class Favs extends Component{

@@ -44,8 +44,8 @@ class Movie extends Component {
                         }
                     </section>
 
-                    <Link to={`vertodas/top_rated`} className="link">
-                        <button type="button" className="button"> Ver todas </button>
+                    <Link to={`vertodas/top_rated`} className="linkMovie">
+                        <button type="button" className="buttonMovie"> Ver todas </button>
                     </Link>
 
 

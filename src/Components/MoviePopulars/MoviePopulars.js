@@ -43,8 +43,8 @@ class MoviePopulars extends Component {
                     </section>
 
 
-                    <Link to= {`vertodas/popular`}>
-                        <button type="button" className="button"> Ver todas </button>
+                    <Link to= {`vertodas/popular`} className="linkMovie">
+                        <button type="button" className="buttonMovie"> Ver todas </button>
                     </Link>
 
                 </article>
