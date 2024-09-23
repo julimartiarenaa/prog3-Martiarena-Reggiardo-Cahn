@@ -1,10 +1,10 @@
 import React from "react";
-import Header from "../../Components/Header/Header";
-import Footer from "../../Components/Footer/Footer";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import "./Home.css"
-import Movie from "../../Components/Movie/Movie";
-import MoviePopulars from "../../Components/MoviePopulars/MoviePopulars";
-import FormHome from "../../Components/FormHome/FormHome";
+import Movie from "../../components/Movie/Movie";
+import MoviePopulars from "../../components/MoviePopulars/MoviePopulars";
+import FormHome from "../../components/FormHome/FormHome";
 
 function Home() {
     return (

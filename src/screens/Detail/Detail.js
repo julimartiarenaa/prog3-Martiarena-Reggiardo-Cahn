@@ -1,7 +1,7 @@
 import React from "react";
-import Header from "../../Components/Header/Header";
-import Footer from "../../Components/Footer/Footer";
-import DetailMini from "../../Components/DetailMini/DetailMini";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
+import DetailMini from "../../components/DetailMini/DetailMini";
 
 function Detail(props) {
     return(
