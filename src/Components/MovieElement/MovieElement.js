@@ -4,7 +4,7 @@ import { Link } from "react-router-dom/cjs/react-router-dom";
 
 
 
-class Element extends Component {
+class MovieElement extends Component {
     constructor(props) {
         super(props);
         this.state={
@@ -103,4 +103,4 @@ class Element extends Component {
     }
 }
 
-export default Element;
+export default MovieElement;

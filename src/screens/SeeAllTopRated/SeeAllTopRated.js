@@ -1,18 +1,19 @@
 import React from "react";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
-import DetailMini from "../../components/DetailMini/DetailMini";
+import AllMoviesTopRated from "../../components/AllMoviesTopRated/AllMoviesTopRated";
 
-function Detail(props) {
+
+function SeeAll(props){
+    console.log(props);
+    
     return(
-        <React.Fragment>
+        <React.Fragment> 
             <Header/>
-            <DetailMini  id={props.match.params.id}/>
+            <AllMoviesTopRated/>
             <Footer/>
         </React.Fragment>
     )
-    
 }
 
-export default Detail;
-
+export default SeeAll

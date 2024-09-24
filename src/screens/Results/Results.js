@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import MovieElement from '../../Components/MovieElement/MovieElement'
-import Header from "../../Components/Header/Header";
+import MovieElement from '../../components/MovieElement/MovieElement'
+import Header from "../../components/Header/Header";
 import "./Results.css"
 
 class Results extends Component {

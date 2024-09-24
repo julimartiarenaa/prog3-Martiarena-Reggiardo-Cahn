@@ -5,7 +5,8 @@ import NotFound from "./screens/NotFound/NotFound";
 import Detail from "./screens/Detail/Detail";
 import Results from "./screens/Results/Results";
 import Favs from "./screens/Favs/Favs";
-import SeeAll from "./screens/SeeAll/SeeAll"
+import SeeAllTopRated from "./screens/SeeAllTopRated/SeeAllTopRated"
+import SeeAllPopular from "./screens/SeeAllPopular/SeeAllPopular"
 
 
 function App() {
@@ -15,7 +16,8 @@ function App() {
       <Route path="/detalle/:id" component={Detail}></Route>
       <Route path= "/search/:pelicula" component={Results}></Route>
       <Route path= "/favoritos" component={Favs}></Route>
-      <Route path= "/vertodas/:categoria" component={SeeAll}></Route>
+      <Route path= "/vertodas/top_rated" component={SeeAllTopRated}></Route>
+      <Route path= "/vertodas/popular" component={SeeAllPopular}></Route>
       <Route path="" component={NotFound}></Route>
     </Switch>
   );
