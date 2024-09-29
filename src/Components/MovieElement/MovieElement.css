@@ -1,4 +1,4 @@
-.element{
+.element {
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -6,7 +6,7 @@
     align-items: center;
 }
 
-.element button{
+.element button {
     display: block;
     padding: 10px;
     background-color: #509178; 
@@ -16,20 +16,38 @@
     cursor: pointer;
     margin: 5px;
     width: 200px;
-    
     font-size: 16px;
 }
-  
+
 .buttonMovie {
     width: 200px;
     height: 100%;
-   
     background-color: #509178;
     cursor: pointer;
+    text-decoration: none !important;
 }
 
 .element img {
     max-width: 100%;
     height: auto;
-    
+}
+
+
+@media (max-width: 768px) {
+    .element {
+        width: 100%;
+    }
+
+    .element button {
+        width: 100%;
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        font-size: 14px;
+    }
 }

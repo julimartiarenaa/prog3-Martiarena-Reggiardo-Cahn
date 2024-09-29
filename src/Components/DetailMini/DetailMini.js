@@ -43,9 +43,9 @@ class DetailMini extends Component{
           <article className="detailArt">
             <img src={`https://image.tmdb.org/t/p/w300${pelicula.poster_path}`} alt="Poster" />
             <h1>{pelicula.title}</h1>
-            <p>{pelicula.vote_average}</p>
+            <p>Rating: {pelicula.vote_average}</p>
             <p>{pelicula.release_date}</p>
-            <p>{pelicula.runtime}</p>
+            <p>Duracion: {pelicula.runtime} Minutos</p>
             <p className="genero">
               Géneros: {pelicula.genres.map((genre) => genre.name).join(", ")}
             </p>
